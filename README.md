@@ -1,3 +1,5 @@
+[👉 Click here to try the Live Demo!](https://saniakorai2-max.github.io/Study-App/)
+
 # Forever
 
 Forever is a calm, aesthetic, and highly practical study tracking web application designed for lifelong learners. Instead of using complex, stressful tools, Forever provides a peaceful environment where you can organize your tasks and track your learning progress over time.
@@ -29,7 +31,7 @@ To run this project on your computer:
 
 1. **Clone or Download the Repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/forever.git](https://github.com/YOUR_USERNAME/forever.git)
+   git clone [https://github.com/saniakorai2-max/Study-App.git](https://github.com/saniakorai2-max/Study-App.git)
 
 -  Open the Project:
    Navigate to the project folder and double-click the index.html file to open it in any modern web browser.
