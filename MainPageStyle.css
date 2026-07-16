@@ -217,3 +217,17 @@ input[type="text"]{
     align-content: end;
     align-items: center;
 }
+
+#res-stop{
+    background-color: #ffffff;
+    color: red;
+    font-weight: bold;
+    margin: 10px;
+    padding: 6px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#res-stop:hover{
+    box-shadow: 10px 10px 5px #00000067;
+}
