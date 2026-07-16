@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forever</title>
     <link rel="stylesheet" href="MainPageStyle.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <div class="content">
@@ -40,10 +41,54 @@
                     <p>0 hours 0 minutes</p>
                 </div>
                 <div class="add">
-                    <i class="fa-solid fa-plus"></i>
+                    <button><i class="fa-solid fa-plus"></i></button>
+                </div>
             </div>
 
         </div>
+
+
+        <div class="Start">
+            <h1>Start Studying</h1>
+            <p>Click the button below and choose your subject to start the timer.</p>
+            <button id="starttime">Start Timer</button>
+
+            <div class="stopwatch" id="watch">
+                <div id="display">00:00:00.00</div>
+            </div>
+
+            <div class="form" style="display: none;">
+                <form class="startform">
+                    <h2>Select the subject you want to study</h2>
+                
+                    <button type="button" 
+
+                    <input type="button" id="sub2" value="Physics">
+                    <label for="sub1">Physics</label>
+
+                    <input type="button" id="sub3" value="it">
+                    <label for="sub1">Information Technology</label>
+
+                    <input type="sumbit" id="" value="submit">
+
+                </form>
+            </div>
+
+        </div>
+
+        <div class="notes">
+            <h2>Notes</h2>
+
+            <div class="input-container">
+                <input type="text" id="taskInput" placeholder="Enter a new task...">
+                <button onclick="addTask()">Add Task</button>
+            </div>
+
+            <ul id="taskList"></ul>
+
+        </div>
+
+
     </div>
 
     <script src="https://kit.fontawesome.com/1442636567.js" crossorigin="anonymous"></script>
