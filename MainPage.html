@@ -12,7 +12,7 @@
 
         <div class="top-bar">
             <h1>Welcome to Forever</h1>
-            <p>Todays Date</p>
+            <p id="date">Today Date</p>
         </div>
 
 
@@ -53,27 +53,6 @@
             <p>Click the button below and choose your subject to start the timer.</p>
             <button id="starttime">Start Timer</button>
 
-            <div class="stopwatch" id="watch">
-                <div id="display">00:00:00.00</div>
-            </div>
-
-            <div class="form" style="display: none;">
-                <form class="startform">
-                    <h2>Select the subject you want to study</h2>
-                
-                    <button type="button" 
-
-                    <input type="button" id="sub2" value="Physics">
-                    <label for="sub1">Physics</label>
-
-                    <input type="button" id="sub3" value="it">
-                    <label for="sub1">Information Technology</label>
-
-                    <input type="sumbit" id="" value="submit">
-
-                </form>
-            </div>
-
         </div>
 
         <div class="notes">
@@ -90,6 +69,30 @@
 
 
     </div>
+
+    <div class="form" style="display: none;">
+        <form class="startform">
+            <h2>Select the subject you want to study:</h2>    
+
+            <input type="button" id="sub2" value="Physics">
+            <label for="sub1">Physics</label>
+
+            <input type="button" id="sub3" value="it">
+            <label for="sub1">Information Technology</label>
+
+            <input type="sumbit" id="" value="submit">
+
+        </form>
+    </div>
+
+    <div class="stopwatch hidden" id="watch">
+        <div>
+        <div id="display">00:00:00.00</div>
+        <button id="res-stop"></button>
+        <button id="Stop">Stop</button>
+        </div>
+    </div>
+
 
     <script src="https://kit.fontawesome.com/1442636567.js" crossorigin="anonymous"></script>
 </body>

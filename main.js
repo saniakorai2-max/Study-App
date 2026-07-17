@@ -1,3 +1,4 @@
+//Task List
 function addTask() {
       const input = document.getElementById('taskInput');
       const taskText = input.value.trim();
@@ -10,19 +11,19 @@ function addTask() {
 
       const ul = document.getElementById('taskList');
       
-      // Create the list item (li)
+      // list item (li)
       const li = document.createElement('li');
 
-      // Create the checkbox
+      // checkbox
       const checkbox = document.createElement('input');
       checkbox.type = 'radio';
       checkbox.className = 'checkbox';
       
-      // Create the text label
+      // text label
       const label = document.createElement('label');
       label.textContent = " " + taskText;
 
-      // Create the delete button
+      // delete button
       const deleteBtn = document.createElement('button');
       deleteBtn.textContent = 'delete';
       deleteBtn.className = 'delete-btn';
@@ -30,7 +31,6 @@ function addTask() {
         ul.removeChild(li);
       };
 
-      // Assemble the elements and append to the main list
       li.appendChild(checkbox);
       li.appendChild(label);
       li.appendChild(deleteBtn);
@@ -41,6 +41,8 @@ function addTask() {
     }
 
     
+
+//Timer
 let startTime = 0;
 let elapsedTime = 0;
 let timerInterval = null;
@@ -48,8 +50,10 @@ let isRunning = false;
 
 const display = document.getElementById("display");
 const button = document.getElementById("starttime");
+const buttonSR = document.getElementById("res-stop");
+const buttonStop = document.getElementById("Stop");
 
-// Formats milliseconds into HH:MM:SS.mm
+// Formating milliseconds into HH:MM:SS.mm
 function formatTime(ms) {
   const hrs = Math.floor(ms / 3600000);
   const mins = Math.floor((ms % 3600000) / 60000);
@@ -61,25 +65,58 @@ function formatTime(ms) {
   return `${pad(hrs)}:${pad(mins)}:${pad(secs)}.${pad(msecs)}`;
 }
 
-// Toggles the stopwatch state
+
+
+//Timer buttons
 button.addEventListener("click", () => {
+  watch.classList.remove('hidden');
   if (!isRunning) {
     // START
-    document.getElementById("watch").style.display = "block"
     startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(() => {
       elapsedTime = Date.now() - startTime;
       display.textContent = formatTime(elapsedTime);
-    }, 10); // Updates every 10 milliseconds for precision
+    }, 10); // Updates every 10 milliseconds
     
-    button.textContent = "Stop";
-    button.style.backgroundColor = "#dc3545"; // Red stop color
+    buttonSR.textContent = "Pause";
+    buttonSR.style.backgroundColor = "#ffff"; 
     isRunning = true;
-  } else {
+  } 
+});
+buttonSR.addEventListener("click", () => {
+  if (!isRunning) {
+    // START
+    watch.classList.remove('hidden');
+    startTime = Date.now() - elapsedTime;
+    timerInterval = setInterval(() => {
+      elapsedTime = Date.now() - startTime;
+      display.textContent = formatTime(elapsedTime);
+    }, 10); // Updates every 10 milliseconds
+    
+    buttonSR.textContent = "Pause";
+    buttonSR.style.backgroundColor = "#ffff"; 
+    isRunning = true;
+  } 
+  else {
     // STOP
     clearInterval(timerInterval);
-    button.textContent = "Resume";
-    button.style.backgroundColor = "#28a745"; // Green start color
+    buttonSR.textContent = "Resume";
+    buttonSR.style.backgroundColor = "#28a745"; // Green start color
     isRunning = false;
   }
 });
+buttonStop.addEventListener("click", ()=> {
+  watch.classList.add('hidden');
+})
+
+
+
+//Todays Date
+const dateShow = document.getElementById('date');
+function ShowDate() {
+  const tdy = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = tdy.toLocaleDateString('en-US', options);
+  dateShow.textContent = formattedDate;
+}
+ShowDate();
